@@ -38,6 +38,9 @@ requirements:
 test:
   imports:
     - kangas
+    - kangas.cli
+    - kangas.server
+    - kangas.datatypes
   commands:
     - kangas --help
 

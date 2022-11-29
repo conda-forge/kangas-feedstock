@@ -1,5 +1,5 @@
 {% set name = "kangas" %}
-{% set version = "1.2.3" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/comet-ml/kangas/archive/{{ version }}.tar.gz
-  sha256: 20be130feedfb6f96cd3477272596f5b0042fde7465a0b95f8637801e3ff08fa
+  sha256: b99fc31828a0d730d33d158534aff11291869e26c2465146ac96407650f0c424
 
 build:
   entry_points:

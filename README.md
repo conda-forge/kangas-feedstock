@@ -1,11 +1,11 @@
-About kangas
-============
+About kangas-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kangas-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/comet-ml/kangas
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kangas-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python API for logging large tables of data with visual interface for performing complex queries
 

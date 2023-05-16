@@ -1,5 +1,5 @@
 {% set name = "kangas" %}
-{% set version = "2.3.7" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/comet-ml/kangas/archive/{{ version }}.tar.gz
-  sha256: 19c370eb98ae6dcd8abe033428051f5968660f1d63d62e919e9f300e8146f309
+  sha256: 0f6d17eae253f6b6735ea89be410da0a064d31bfe8e0c7c4c19a04f33a37b58b
 
 build:
   entry_points:
@@ -24,18 +24,27 @@ requirements:
     - python >=3.7
   run:
     - astor
-    - numpy
-    - tornado
+    - click
+    - flask >=2.2
+    - flask-caching
+    - marko
     - matplotlib-base
-    - pillow
-    - python >=3.7
-    - scipy
     - nodejs >=16.15.1a4
-    - requests
-    - tqdm
+    - numpy
+    - opentsne
+    - pillow
     - psutil
+    - pyngrok
+    - python >=3.7
+    - requests
+    - scipy
+    - scikit-learn
+    - waitress
+    
 
 test:
+  source_files:
+    - backend/tests
   imports:
     - kangas
     - kangas.cli
@@ -43,6 +52,15 @@ test:
     - kangas.datatypes
   commands:
     - kangas --help
+    
+    # Skip pip check because it wants nodejs-bin and we're giving it nodejs
+#     - pip check
+    
+    - pytest -vvv --capture=tee-sys backend/tests
+  requires:
+    - pandas
+    - pip
+    - pytest
 
 about:
   home: https://github.com/comet-ml/kangas

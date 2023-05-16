@@ -56,7 +56,7 @@ test:
     # Skip pip check because it wants nodejs-bin and we're giving it nodejs
 #     - pip check
     
-    - pytest -vvv --capture=tee-sys tests
+    - pytest -vvv --capture=tee-sys backend/tests
   requires:
     - pip
     - pytest

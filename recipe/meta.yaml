@@ -58,6 +58,7 @@ test:
     
     - pytest -vvv --capture=tee-sys backend/tests
   requires:
+    - pandas
     - pip
     - pytest
 

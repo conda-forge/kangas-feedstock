@@ -24,16 +24,23 @@ requirements:
     - python >=3.7
   run:
     - astor
-    - numpy
-    - tornado
+    - click
+    - flask >=2.2
+    - flask-caching
+    - marko
     - matplotlib-base
-    - pillow
-    - python >=3.7
-    - scipy
     - nodejs >=16.15.1a4
-    - requests
-    - tqdm
+    - numpy
+    - opentsne
+    - pillow
     - psutil
+    - pyngrok
+    - python >=3.7
+    - requests
+    - scipy
+    - scikit-learn
+    - waitress
+    
 
 test:
   imports:
@@ -43,6 +50,9 @@ test:
     - kangas.datatypes
   commands:
     - kangas --help
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/comet-ml/kangas

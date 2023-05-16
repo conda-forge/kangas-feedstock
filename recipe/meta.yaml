@@ -43,6 +43,8 @@ requirements:
     
 
 test:
+  source_files:
+    - backend/tests
   imports:
     - kangas
     - kangas.cli
@@ -50,9 +52,14 @@ test:
     - kangas.datatypes
   commands:
     - kangas --help
-    - pip check
+    
+    # Skip pip check because it wants nodejs-bin and we're giving it nodejs
+#     - pip check
+    
+    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/comet-ml/kangas

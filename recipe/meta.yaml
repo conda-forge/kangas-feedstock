@@ -1,5 +1,5 @@
 {% set name = "kangas" %}
-{% set version = "2.4.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/comet-ml/kangas/archive/{{ version }}.tar.gz
-  sha256: 0f6d17eae253f6b6735ea89be410da0a064d31bfe8e0c7c4c19a04f33a37b58b
+  sha256: 9151222bbe3679f57c0a4cc8004f1b9bd9c62bbbb6744def486bbe59975e0178
 
 build:
   entry_points:
@@ -40,7 +40,7 @@ requirements:
     - scipy
     - scikit-learn
     - waitress
-    
+
 
 test:
   source_files:
@@ -52,10 +52,9 @@ test:
     - kangas.datatypes
   commands:
     - kangas --help
-    
+
     # Skip pip check because it wants nodejs-bin and we're giving it nodejs
 #     - pip check
-    
     - pytest -vvv --capture=tee-sys backend/tests
   requires:
     - pandas

@@ -31,7 +31,6 @@ requirements:
     - matplotlib-base
     - nodejs >=16.15.1a4
     - numpy
-    - opentsne
     - pillow
     - psutil
     - pyngrok
@@ -57,7 +56,7 @@ test:
 #     - pip check
     - pytest -vvv --capture=tee-sys backend/tests
   requires:
-    - pandas
+    - pandas <2.1.0  # pandas 2.1+ deprecated _testing.makeMissingDataframe
     - pip
     - pytest
 

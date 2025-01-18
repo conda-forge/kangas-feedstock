@@ -22,6 +22,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - astor
     - click
@@ -51,12 +52,11 @@ test:
     - kangas.datatypes
   commands:
     - kangas --help
-
     # Skip pip check because it wants nodejs-bin and we're giving it nodejs
-#     - pip check
     - pytest -vvv --capture=tee-sys backend/tests
   requires:
-    - pandas <2.1.0  # pandas 2.1+ deprecated _testing.makeMissingDataframe
+    # pandas 2.1+ deprecated _testing.makeMissingDataframe
+    - pandas <2.1.0
     - pip
     - pytest
     - python {{ python_min }}
